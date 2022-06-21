@@ -4,8 +4,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>{% block title %}Python 웹프로젝트 v1{% endblock %}</title>
-    <link rel="stylesheet"href="static /css/normalize.css">
-    <link rel="stylesheet"href="static/css/webproject.css">
+    <link rel="stylesheet" href="{% static '/css/normalize.css'%}">
+    <link rel="stylesheet" href="{% static '/css/webproject.css'%}">
     <style>
     /*메인 영역 크기 지정*/
      #main { height: auto; min-height: 500px }
@@ -20,7 +20,7 @@
     <div id="main">
          {%block content %}{% endblock %}
     </div>
-        {% include 'layout/footer.html' %}
+        {% include 'layout/footer.html' %}.
 
     </div>
 </body>

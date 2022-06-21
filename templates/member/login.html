@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 {% block style %}
    form{width: 350px;margin: 15px auto}
         form div{margin-top:10px}
@@ -7,7 +7,7 @@
 {% endblock %}
 {% block content %}
     <h2>로그인</h2>
-        <form name="loginfrm" method="post" action="login.do">
+        <form name="loginfrm" method="post" >
              <div>
             <label for="userid">아이디</label>
             <input type="text" name="userid" id="userid" >
@@ -23,3 +23,4 @@
             </div>
         </form>
 {% endblock %}
+{% block jscript %}{% endblock %}

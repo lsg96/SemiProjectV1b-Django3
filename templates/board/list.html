@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 
 {% block style %}
 
@@ -40,7 +40,7 @@
             </colgroup>
             <tr>
                 <td colspan="5" class="btns">
-{#                     <button type="button" onclick="location.href='write.html'">새글쓰기</button>#}
+                     <button type="button" onclick="location.href='/write'">새글쓰기</button>
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@
                 <th>작성일</th><th>조회</th>
             </tr>
             <tr>
-{#                <td>1</td><td><a href="view.html?bro=1">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</a></td>#}
+                <td>1</td><td><a href='/view'>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</a></td>
                 <td>leesg</td>
                 <td>2022-05-27</td><td>777</td>
             </tr>
@@ -112,3 +112,4 @@
             <li>다음</li>
         </ul>
 {% endblock %}
+{% block jscript %}{% endblock %}
