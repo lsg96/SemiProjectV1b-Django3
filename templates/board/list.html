@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+        #pgnav{text-align: center;margin-left:-100px}
+        /*페이지네이션의 페이지항목의 간격 재조정*/
+        #pgnav li {margin-left: 10px}
+        /*페이지네이션의 현재 페이지에 대한 스타일 지정 */
+        .cpage {font-weight: bold;font-size:30px;
+            color:red}
+        /*게시판 목록 테이블 가운데 정렬*/
+
+        #note_board {width: 60% ;margin: 65px auto -10px;
+            border-collapse:collapse ;
+            table-layout: fixed}
+
+        #note_board td, #note_board th{
+            border: 1px solid black;
+            padding:10px;text-align: center;}
+
+        #note_board td:nth-child(2){white-space: nowrap;overflow: hidden; text-overflow: ellipsis}
+        .btns {border-top: none; border-right: none;border-left: none;border-bottom: none}
+        #note_board tr:first-child td{text-align: right; border-top: none; border-right: none;border-left: none;border-bottom: none}
+
+        td:nth-child(2) a:hover{color:crimson}
+        td:nth-child(2) a:active{color:crimson}
+
+
+{% endblock %}
+
+{% block content %}
+ <h2>게시판</h2>
+        <table id="note_board">
+            <colgroup><!-- 테이블 컬럼 너비 지정-->
+                <col style="width: 10%">
+                <col style="">
+                <col style="width: 15%">
+                <col style="width: 15%">
+                <col style="width: 10%">
+            </colgroup>
+            <tr>
+                <td colspan="5" class="btns">
+{#                     <button type="button" onclick="location.href='write.html'">새글쓰기</button>#}
+                </td>
+            </tr>
+            <tr>
+                <th>번호</th><th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th><th>조회</th>
+            </tr>
+            <tr>
+{#                <td>1</td><td><a href="view.html?bro=1">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</a></td>#}
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>2</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>3</td><td >시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>4</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>5</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>6</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>7</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>8</td><td >시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>9</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+            <tr>
+                <td>10</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라고, 친구!</td>
+                <td>leesg</td>
+                <td>2022-05-27</td><td>777</td>
+            </tr>
+        </table>
+
+        <ul id="pgnav">
+            <li>이전</li>
+            <li class="cpage">1</li><li>2</li>
+            <li>3</li><li>4</li>
+            <li>5</li><li>6</li>
+            <li>7</li><li>8</li>
+            <li>9</li><li>10</li>
+
+
+            <li>다음</li>
+        </ul>
+{% endblock %}

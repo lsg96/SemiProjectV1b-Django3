@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block style %}
+    /*로그인한 회원의 정보 테이블 배치*/
+    table {border: 1px solid red; margin: 120px auto}
+    /*회원정보 각 행에 여백 주기*/
+    th,td{padding:10px}
+    /*회원의 정보 테이블의 제목 정렬하기*/
+    th{text-align: right}
+{% endblock %}
+{% block content %}
+    <h2>회원정보</h2>
+        <table>
+            <tr><th>아이디</th><td>siestageek</td></tr>
+            <tr><th>이름</th><td>으하하하</td></tr>
+            <tr><th>이메일</th><td>leesg@naver.com</td></tr>
+            <tr><th>가입일</th><td>2022-05-27 11:01:33</td></tr>
+        </table>
+
+{% endblock %}

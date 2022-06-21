@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block style %}
+   form{width: 350px;margin: 15px auto}
+        form div{margin-top:10px}
+       form label{display: inline-block ;width: 120px; text-align: right;font-weight: bold}
+
+{% endblock %}
+{% block content %}
+    <h2>로그인</h2>
+        <form name="loginfrm" method="post" action="login.do">
+             <div>
+            <label for="userid">아이디</label>
+            <input type="text" name="userid" id="userid" >
+            </div>
+
+            <div>
+                <label for="passwd">비밀번호</label>
+                <input type="password" name="passwd" id="passwd" >
+            </div>
+
+            <div><label></label>
+                <button type="button">로그인</button>
+            </div>
+        </form>
+{% endblock %}
