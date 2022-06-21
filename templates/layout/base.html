@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Python 웹프로젝트 v1{% endblock %}</title>
+    <link rel="stylesheet"href="static /css/normalize.css">
+    <link rel="stylesheet"href="static/css/webproject.css">
+    <style>
+    /*메인 영역 크기 지정*/
+     #main { height: auto; min-height: 500px }
+        /*동적 의사 선택자: link,visited,hover,active,focus */
+    {% block style %} {% endblock %}
+    </style>
 </head>
 <body>
+    <div id="wrap">
+        {% include 'layout/header.html' %}
 
+    <div id="main">
+         {%block content %}{% endblock %}
+    </div>
+        {% include 'layout/footer.html' %}
+
+    </div>
 </body>
 </html>
