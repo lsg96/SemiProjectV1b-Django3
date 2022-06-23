@@ -17,10 +17,13 @@
 {% endblock %}
 {% block content %}
     <h2>회원가입</h2>
-        <form name="joinfrm" method="post" >
+
+        <form name="joinfrm" id="joinfrm" method="post" >
+        <div style="color: red">{{ error|addslashes }}</div>
+        {% csrf_token %}{# 동일출처origin 확인용 쿠키 생성 #}
             <div>
                 <label for="userid">아이디</label>
-                <input type="text" name="userid" id="userid" >
+                <input type="text" name="userid" id="userid" value="{{ form.userid }}" >
             </div>
 
             <div>
@@ -29,25 +32,63 @@
             </div>
 
             <div>
-                <label for="passwd">비밀번호 확인</label>
-                <input type="password" name="passwd" id="repasswd" >
+                <label for="repasswd">비밀번호 확인</label>
+                <input type="password" name="repasswd" id="repasswd" >
             </div>
 
             <div>
                 <label for="name">이름</label>
-                <input type="text" name="name" id="name" >
+                <input type="text" name="name" id="name"value="{{ form.name }}" >
             </div>
             <div>
                 <label for="email">이메일</label>
-                <input type="text" name="email" id="email" >
+                <input type="text" name="email" id="email"value="{{ form.email }}" >
             </div>
 
             <div>
 <!--                <label></label>-->
-                <button type="submit">입력완료</button>
+                <button type="submit" id="joinbtn">입력완료</button>
                 <button type="reset">입력취소</button>
             </div>
 
         </form>
 {% endblock %}
-{% block jscript %}{% endblock %}
+{#{% block jscript %}#}
+{#    <script>#}
+{#        const  joinfrm = document.querySelector('#joinfrm');#}
+{#        joinfrm.addEventListener('submit',(e)=>{#}
+{#           let userid = document.joinfrm.userid;#}
+{#           let passwd = document.joinfrm.passwd;#}
+{#           let repasswd = document.joinfrm.repasswd;#}
+{#           let name = document.joinfrm.name;#}
+{#           let email = document.joinfrm.email;#}
+{##}
+{#           if(userid.value ==''){#}
+{#               alert('아이디를 입력하세요!');#}
+{#               userid.focus();#}
+{#               e.preventDefault();#}
+{#           }else if(passwd.value ==''){#}
+{#               alert('비밀번호를 입력하세요!');#}
+{#               passwd.focus();#}
+{#               e.preventDefault();#}
+{#           }else if(repasswd.value ==''){#}
+{#               alert('확인 비밀번호를 입력하세요!');#}
+{#               userid.focus();#}
+{#               e.preventDefault();#}
+{#           }else if(name.value ==''){#}
+{#               alert('이름을 입력하세요!');#}
+{#               userid.focus();#}
+{#               e.preventDefault();#}
+{#           }else if(email.value ==''){#}
+{#               alert('이메일을 입력하세요!');#}
+{#               userid.focus();#}
+{#               e.preventDefault();#}
+{#           }else if(passwd.value != repasswd.value) {#}
+{#               alert('비밀번호가 서로 일치 하지 않습니다.입력하세요!');#}
+{#               repasswd.focus();#}
+{#               e.preventDefault();#}
+{#           }#}
+{##}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}

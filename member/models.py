@@ -3,6 +3,8 @@ from datetime import datetime
 from django.db import models
 
 # Create your models here.
+#Django에서 폼 데이터를 다루는 방법은 크게 2가지  Model,ModelForm
+
 # member 테이블 구조와 유사하게 member 모델 정의
 class Member(models.Model):
     id=models.AutoField(primary_key=True)
