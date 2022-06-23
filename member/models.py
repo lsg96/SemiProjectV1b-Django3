@@ -3,6 +3,7 @@ from datetime import datetime
 from django.db import models
 
 # Create your models here.
+# member 테이블 구조와 유사하게 member 모델 정의
 class Member(models.Model):
     id=models.AutoField(primary_key=True)
     userid = models.CharField(max_length=18,unique=True)
