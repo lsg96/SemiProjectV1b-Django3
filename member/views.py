@@ -70,6 +70,11 @@ def login(request):
                 #세션 변수에 인증정보를 저장해 둠
                 request.session['userid']=form['userid']
 
+                #로그인한 사용자의 id도 조회해서
+                #세션 변수에 저장해둠
+                id=Member.objects.all().filter(userid=form['userid']).values_list('id')[0][0]
+                request.session['userid_id']=id
+
                 return redirect('/') #index 페이지 로 이동
             else:
                 error='아이디나 비밀번호가 틀립니다.'
