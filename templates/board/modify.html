@@ -1,0 +1,58 @@
+{% extends 'layout/base.html' %}
+{% block style %}
+        form{
+            /*border:1px solid red; */
+            width: 60%; margin: 60px auto 10px}
+        form div{margin-top:10px}
+        form label{display: inline-block;
+        width:120px;text-align: right;
+        font-weight: bold;margin-right:15px }
+        .dragup{vertical-align: top; margin-top: 5px}
+{% endblock %}
+
+{% block content %}
+        <h2>게시판 본문글 수정하기</h2>
+
+        <form name="boardfrm"  method="post" >
+        {% csrf_token %}
+        {{ error }}
+        <div><label for="title">제목</label>
+                <input type="text" name="title" id="title" value="{{ bd.title }}"></div>
+
+
+            <div><label for="title">작성자</label>
+                <span>{{ bd.member.userid}}</span></div>
+
+            <div><label for="contents"class="dragup">본문</label>
+                <textarea name="contents" id="contents" rows="10"cols="50"
+                style="resize:none">{{ bd.contents }}</textarea></div>
+
+            <div><label></label>
+                    <button type="button" id="mdfokbtn">수정완료</button>
+                    <button type="reset">다시입력</button>
+            </div>
+            {# 수정할 게시글의 글번호를 hidden으로 설정 #}
+            <input type="hidden" name="bno" value="{{bd.id}}">
+            </form>
+{% endblock %}
+{% block jscript %}
+    <script>
+        const mdfokbtn =document.querySelector('#mdfokbtn')
+        mdfokbtn.addEventListener('click', ()=>{
+            const title =document.boardfrm.title;
+            const contents =document.boardfrm.contents;
+            if(title.value==''){
+                alert('제목을 작성하세요!');
+                title.focus();
+                return;
+            } else if(contents.value==''){
+                alert('본문을 작성하세요!');
+                contents.focus();
+                return;
+            }else{
+                document.boardfrm.submit();
+            }
+
+        })
+    </script>
+{% endblock %}
